@@ -17,30 +17,41 @@
             name : 'Santhosh',
             age : 22
         }
-        //we can access component instances using arrow functions.
-        bClick = (e)=>{
-            this.setState({
-                name : 'Santhosh kumar'
-            });
-            console.log(this.state);
+        // //we can access component instances using arrow functions.
+        // bClick = (e)=>{
+        //     this.setState({
+        //         name : 'Santhosh kumar'
+        //     });
+        //     console.log(this.state);
             
+        // }
+        // mHover=(e)=>{
+        //     console.log(e.target, e.pageX);
+        // }
+        // oCopy=(e)=>{
+        //     console.log("Focus on your goal until you achieve it.")
+        // }
+        bChange = (e) => {
+            this.setState({
+                name : e.target.value
+            });
         }
-        mHover=(e)=>{
-            console.log(e.target, e.pageX);
-        }
-        oCopy=(e)=>{
-            console.log("Focus on your goal until you achieve it.")
+        fSubmit = (e)=>{
+            e.preventDefault(); 
+            console.log('Form submitted',this.state.name,'!')
         }
         render(){
             return(
                 <div className="app-content">
                 <h1>Hello! welcome to my first react application...</h1>
                 <p>My name is {this.state.name} and i am {this.state.age} years old.</p>
-                <button onClick={this.bClick}>Click me</button>
+                <br/>
+                <form onSubmit={this.fSubmit}>
+                <input type = "text" onChange={this.bChange}/>
                 <br/>
                 <br/>
-                <button onMouseOver={this.mHover}>Hover me</button>
-                <p onCopy={this.oCopy}>Dream big, Achieve big.</p>
+                <button>Submit</button> 
+                </form>
                 </div>
             )
         }
