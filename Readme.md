@@ -1,0 +1,1 @@
+This is a react application which tells about complete understanding about react and redux.
