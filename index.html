@@ -17,11 +17,26 @@
             name : 'Santhosh',
             age : 22
         }
+        bClick(e){
+            console.log(e.target);
+            
+        }
+        mHover(e){
+            console.log(e.target, e.pageX);
+        }
+        oCopy(e){
+            console.log("Focus on your goal until you achieve it.")
+        }
         render(){
             return(
                 <div className="app-content">
                 <h1>Hello! welcome to my first react application...</h1>
                 <p>My name is {this.state.name} and i am {this.state.age} years old.</p>
+                <button onClick={this.bClick}>Click me</button>
+                <br/>
+                <br/>
+                <button onMouseOver={this.mHover}>Hover me</button>
+                <p onCopy={this.oCopy}>Dream big, Achieve big.</p>
                 </div>
             )
         }
