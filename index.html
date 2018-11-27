@@ -17,14 +17,18 @@
             name : 'Santhosh',
             age : 22
         }
-        bClick(e){
-            console.log(e.target);
+        //we can access component instances using arrow functions.
+        bClick = (e)=>{
+            this.setState({
+                name : 'Santhosh kumar'
+            });
+            console.log(this.state);
             
         }
-        mHover(e){
+        mHover=(e)=>{
             console.log(e.target, e.pageX);
         }
-        oCopy(e){
+        oCopy=(e)=>{
             console.log("Focus on your goal until you achieve it.")
         }
         render(){
